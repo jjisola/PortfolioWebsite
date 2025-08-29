@@ -1,0 +1,256 @@
+/* start */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --page-width: 8.5in;
+    --page-height:11in;
+    --left-width: calc(var(--page-width) * (2/3));
+    --right-width: calc(var(--page-width) * (1/3));
+}
+body{
+    font-family: 'Times New Roman';
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Name Section */
+.top-section{
+    width: var(--page-width);
+    height:1in;
+    text-align: center;
+    /* background-color: aliceblue; */
+    background-color: #3C5769;
+    color: #FFFFFF;
+    /* background-color: rgb(240, 240, 240); */
+
+}
+.top_name{
+    margin-top: 0px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    font-size: 22pt;
+}
+
+.top_job{
+    margin-top:0px;
+    color: #ffffff;
+    
+}
+
+/* Main */
+.main-content{
+    width:var(--page-width);
+    display: flex;
+    
+}
+/* Left Side */
+.left-column{
+    width:var(--left-width);
+    height: 10in;
+    margin-left: 0.25in;
+    margin-right: 0.25in;
+}
+/* summary */
+.professional-summary_title{
+    margin-bottom: 15px;
+}
+.professional-summary_title h2{
+    margin-bottom: 0px;
+}
+.professional-summary_p{
+    margin-top: 0px;
+    font-size: 11pt;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* work experience */
+.work-experience_title{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding-bottom: 0px;
+}
+.job1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.job1_header{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.job1_header h3{
+    margin-top: 0px;
+}
+.job1_first-line{
+    padding-top: 0px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.job1_meta{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+.job1_location{
+    font-size: 11pt;
+}
+.job1_date{
+    font-size: 11pt;
+}
+.job1 ul{
+    margin-top: 3px;
+    margin-bottom: 0px;
+    font-size: 11pt;
+    padding-bottom: 5px;
+}
+.job1 li{
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+/* Projects */
+
+.projects_title{
+    margin-bottom: 15px;
+}
+
+.project1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.project1_header{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.project1_header h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.project1_first-line{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.project1_second-line{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    font-size: 11pt;
+}
+.project1 ul{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 11pt;
+}
+.project1 li{
+    line-height: 1.5;
+}
+
+
+/* Right Side */
+.right-column{
+    /* background-color: rgb(240, 240, 240); */
+    position: relative;
+    background-color: aliceblue;
+    width: var(--right-width);
+    height: 10in;
+}
+
+.right-column-container{
+    position: relative;
+    margin-left: 0.25in;
+    margin-right: 0.25in;
+    width: calc(var(--right-width) - 0.5);
+    height: 10in;
+    /* width: var(--right-width); */
+    /* height: 10in; */
+}
+
+.mail-icon{
+    width: 20px;
+    height:20px;
+    margin-right: 8px;
+}
+.github-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.linkedin-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.phone-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.links{
+
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.links li{
+    display: flex;
+    align-items: center;
+    margin-left: 0rem;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    /* font-size: 11pt; */
+
+    /* font-family: 'Courier New', Courier, monospace; */
+    
+}
+.education_title{
+    margin-bottom: 20px;
+}
+
+.education_schoolname{
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.education_year{
+    font-size: 11pt;
+    font-style: normal;
+    margin-bottom: 0px;
+}
+.education_major{
+    font-size: 11pt;
+    font-style: Bold;
+    margin-top: 0px;
+}
+
+.html_note{
+    /* position: absolute; */
+    position: absolute;
+    font-size: 9pt;
+    text-align: center;
+    width: 100%;
+    /* margin-top: 1.0rem; */
+    /* left: 0.25in;*/
+    bottom: 0.25in; 
+    color: #666666;
+}
+
+h2{
+    font-size: 12pt;
+    font-style: italic;
+    margin-bottom: 0px;
+}
+h3{
+    font-size: 12pt;
+    margin-bottom: 0in;
+    font-style: normal;
+}
+
+a{
+    color: black;
+}

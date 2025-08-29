@@ -1,35 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Home - Joey Isola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand"><a href="index.html">Joseph Roscoe Isola</a></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="subhead">Automation Engineer • Embedded Systems • Software Developer</div>
+    </header>
 
-  <main>
-    <section>
-      <h2>About This Site</h2>
-      <p>This is a basic static website boilerplate using plain HTML, CSS, and JavaScript.</p>
-    </section>
-  </main>
+    <main>
+      <section class="about">
+        <h2>About Me</h2>
+        <p>
+          I'm Joey
+        </p>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 My Name</p>
-  </footer>
+      <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <h3><a href="project1.html">PVD Coating Chamber Control</a></h3>
+            <p>Turnkey automation for aerospace-grade thin film coating (PLC + SCADA).</p>
+          </li>
+          <!-- <li>
+            <h3><a href="project2.html">Smart Watering System</a></h3>
+            <p>Arduino-based IoT watering with solar power and moisture sensing.</p>
+          </li>
+          <li>
+            <h3><a href="project3.html">Unity Spaceship Game</a></h3>
+            <p>Physics-driven simulator with velocity vectors and custom controls.</p>
+          </li> -->
+        </ul>
+      </section>
+    </main>
 
-  <script src="js/main.js" defer></script>
+    <footer>
+      <p>© 2025 Joey Isola</p>
+    </footer>
+  </div>
 </body>
 </html>

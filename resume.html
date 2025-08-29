@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resume – Joey Isola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .resume-wrap { max-width: 900px; margin: 0 auto; }
+    .resume-toolbar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; margin-bottom: 12px; flex-wrap: wrap;
+    }
+    .resume-frame {
+      width: 100%; height: 1200px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fff;
+    }
+    @media (max-width: 600px) { .resume-frame { height: 1600px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="brand"><a href="index.html">Joseph Roscoe Isola</a></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <!-- Keep the exact same space as Home, but hide the text -->
+      <div class="subhead placeholder" aria-hidden="true">Automation Engineer • Embedded Systems • Software Developer</div>
+    </header>
+
+    <main class="resume-wrap">
+      <div class="resume-toolbar">
+        <span>View the resume embedded below, or open/download:</span>
+        <div>
+          <a class="button" href="resume-standalone.html" target="_blank" rel="noopener">Open Fullscreen</a>
+          <a class="button" href="resume.pdf" download>Download PDF ⬇️</a>
+        </div>
+      </div>
+
+      <iframe class="resume-frame" src="resume-standalone.html" title="Resume - Joseph Roscoe Isola"></iframe>
+
+      <noscript>JavaScript is disabled. <a href="resume-standalone.html">Open the resume</a>.</noscript>
+    </main>
+
+    <footer>
+      <p>© 2025 Joey Isola</p>
+    </footer>
+  </div>
+</body>
+</html>
