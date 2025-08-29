@@ -30,8 +30,8 @@
 
       <!-- Title & meta -->
       <section class="project-hero">
-        <h1 class="project-title">Diamond-Like Carbon Coating Chamber Automation</h1>
-        <div class="project-meta">Role: Automation Engineer &nbsp;•&nbsp; Year: 2024 &nbsp;•&nbsp; Stack: PLC, Automation Direct</div>
+        <h1 class="project-title">Cathodic Arc PVD Coating Chamber Automation</h1>
+        <div class="project-meta">Role: Automation Engineer &nbsp;•&nbsp; Year: 2024 &nbsp;•&nbsp; Stack: Allen Bradley PLC, Ignition Edge SCADA</div>
         <!-- Optional hero image -->
         <!-- <img class="hero-image" src="images/project-hero.jpg" alt="Wide view of the project setup" loading="lazy"> -->
       </section>
@@ -41,14 +41,18 @@
         <p>
           <!-- Opening paragraph: high-level summary of what the project is, who it was for,
           and the main outcome or impact. Mention notable constraints or goals. -->
-          Fully Automated vacuum chamber inteded for coating stainless steel with Diamond-Like-Carbon material; mainly used in production of Aerospace components. The main goal of this automation project was to produce a system where a "recipe" process is loaded from an excel spreadsheet and executed while monitoring for data logging, displaying real time status of all peripheral devices and handling alarms. This system was finished in December of 2024 and is used near daily, running recipe processes up to 8 about hours long. The implementation of this automated system has saved an average of 5-6 hours of operator overhead for Acree Technologies.
+          <!-- Fully Automated vacuum chamber inteded for coating stainless steel with Diamond-Like-Carbon material; mainly used in production of Aerospace components. The main goal of this automation project was to produce a system where a "recipe" process is loaded from an excel spreadsheet and executed while monitoring for data logging, displaying real time status of all peripheral devices and handling alarms. This system was finished in December of 2024 and is used near daily, running recipe processes up to 8 about hours long. The implementation of this automated system has saved an average of 5-6 hours of operator overhead for Acree Technologies. -->
+          Fully Automated Vacuum chamber specialized for Cathodic Arc Deposition of Nickel-Alloy Corrosion Resistant coating made specifically for Chromalloy. The goal of this project was to construct a Turnkey automation system where a recipe process is loaded from an excel spreadsheet and set all devices to their specified set-points while monitoring real time data, logging all historical data, and handling alarms based on preconfigured conditions. The implementation of this automated system has saved 10 hours of operator overhead every other day for Acree Technologies.
         </p>
         <p>
           <!-- Second paragraph: your responsibilities and the interesting technical bits—architecture, tools, tradeoffs, performance metrics, testing strategy,etc. -->
-          The most challenging part in building this chamber was regulating the asynchronous behavior of seven concurrent RS-232 ports. Each RS-232 port was responisble for initializing its assigned device, setting values for both recipe delta-time values or operator manual control, and reading actual values every 0.5 seconds. Each power supply or peripheral device communicated using different parameters; some used ASCII protocol, others used raw bytes in a complicated handshake protocol, etc... 
+          <!-- The most challenging part in building this chamber was regulating the asynchronous behavior of seven concurrent RS-232 ports. Each RS-232 port was responisble for initializing its assigned device, setting values for both recipe delta-time values or operator manual control, and reading actual values every 0.5 seconds. Each power supply or peripheral device communicated using different parameters; some used ASCII protocol, others used raw bytes in a complicated handshake protocol, etc...  -->
+          This chamber refactored Allen Bradley MicroLogix 1400 PLC's from an obsolete system and incorporated Ignition Edge Control as SCADA, using a Dell Desktop computer running Windows 11 and a touch screen monitor. This system uses 6 RS-232 connections, 15 Analog Input channels, 7 Analog Output channels, and a multitude of digital IO for control of peripheral devices. The PLC's digital output feeds relays and contactors to supply 3-phase power to various power supplies, 2 heaters, a motor, seven pneumatic controlled devices and two pumps. 
         </p>
+        
         <p>
-          One of the most notable tradeoffs we made in the creation of this automated system was using C-More SCADA with the Automation Direct EA9 touch panel instead of a computer with either WonderWare or Ignition. The incorporation of the EA9 touch panel with C-More made it less convenient for the operators to retrieve data; however, isolating the automation system entirely from the desktop computer for programming made the chamber safer and more deterministic for the Diamond-Like-Carbon coating process. The down-side of this method is that it is time consuming to retrieve data stored on the PLC's and injecting new recipes into the code associated with the touch panel. 
+          <!-- One of the most notable tradeoffs we made in the creation of this automated system was using C-More SCADA with the Automation Direct EA9 touch panel instead of a computer with either WonderWare or Ignition. The incorporation of the EA9 touch panel with C-More made it less convenient for the operators to retrieve data; however, isolating the automation system entirely from the desktop computer for programming made the chamber safer and more deterministic for the Diamond-Like-Carbon coating process. The down-side of this method is that it is time consuming to retrieve data stored on the PLC's and injecting new recipes into the code associated with the touch panel.  -->
+          One of the most significant responsibilities of this automated system is to retrigger the cathodic arc process when an "Arc-Out" event occurs mid process. To start a cathodic arc process, a 
         </p>
         <!-- Optional bullets for highlights -->
         <ul>
@@ -63,7 +67,7 @@
         <h2>Gallery</h2>
         <div class="media-grid">
           
-            <figure>
+            <!-- <figure>
                 <div class="thumb">
                     <img src="images/IMG_1556.jpg" alt="Control cabinet interior" loading="lazy">
                 </div>
@@ -92,7 +96,7 @@
                     <img src="images/electricalDesign.png" alt="Control cabinet interior" loading="lazy">
                 </div>
                 <figcaption>Analog Voltage input PLC Snip-it from PLC Wiring Schematic.</figcaption>
-            </figure>
+            </figure> -->
             <!-- <figure>
                 <div class="thumb">
                     <img src="images/IMG_1560.jpg" alt="Control cabinet interior" loading="lazy">
