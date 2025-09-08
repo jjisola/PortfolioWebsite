@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Title - Joey Isola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="A brief description of this project for SEO/snippets." />
+</head>
+<body>
+  <div class="container">
+    <!-- Shared header -->
+    <header class="site-header">
+      <div class="brand"><a href="index.html">Joseph Roscoe Isola</a></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">About Me</a>
+      </nav>
+      <div class="subhead placeholder" aria-hidden="true">
+        Automation Engineer • Embedded Systems • Software Developer
+      </div>
+    </header>
+
+    <main>
+      <!-- Breadcrumb / back link (optional) -->
+      <p style="margin: 0 0 12px;">
+        <a href="index.html" style="text-decoration:none;">← Back to Projects</a>
+      </p>
+
+      <!-- Title & meta -->
+      <section class="project-hero">
+        <h1 class="project-title">Embedded PID Loop for Mass Flow Regulation in R&D Plasma Coating System</h1>
+        <!-- <div class="project-meta">Role: Automation Engineer &nbsp;•&nbsp; Company: Acree Technologies &nbsp;•&nbsp; Year: 2025 &nbsp;•&nbsp; Stack: Arduino Microcontroller, Python TKinter & MatPlotLib GUI</div> -->
+         <div class="project-meta">
+            Role: Automation Engineer &nbsp;•&nbsp;
+            Company: Acree Technologies &nbsp;•&nbsp;
+            Year: 2025 &nbsp;•&nbsp;
+            Stack: Arduino Mega R3, MCP4921 DAC, TI MAX232N, Python (Tkinter + Matplotlib)
+        </div>
+        <!-- Optional hero image -->
+        <!-- <img class="hero-image" src="images/project-hero.jpg" alt="Wide view of the project setup" loading="lazy"> -->
+      </section>
+
+      <!-- Write-up (paragraphs) -->
+      <section class="project-content">
+        <p>
+          <!-- Opening paragraph: high-level summary of what the project is, who it was for,
+          and the main outcome or impact. Mention notable constraints or goals. -->
+          <!-- Created an Automated PID Loop system using Oxygen Flowrate on a Mass Flow controller as the setpoint variable and a Pinnacle Power supply as the process variable. This system is used on a PVD research and development chamber for Acree Technologies. The Arduino Microcontroller reads voltage from the Pinnacle Power supply via RS-232 to TTL UART, processes proportional, Integral, and Derivative terms, (PID) then sets the oxygen flowrate with a 0-5VDC signal.  -->
+           Designed and deployed an automated PID loop to regulate oxygen flow in a PVD research chamber, using a mass flow controller as the setpoint device and a Pinnacle power supply as the process feedback variable. The system continuously monitors voltage via RS-232 (converted to TTL UART), calculates proportional, integral, and derivative terms in firmware, and adjusts the mass flow controller through a 0-5&nbsp;VDC analog signal.
+        </p>
+        <p>
+          <!-- Second paragraph: your responsibilities and the interesting technical bits—architecture, tools, tradeoffs, performance metrics, testing strategy,etc. -->
+          <!-- The Arduino Mega R3 Microcontroller two peripheral integrated circuits: a MCP4921 Digital-to-Analog Converter to send a 0-5VDC analog signal to the mass flow controller with a 10-bit resolution using SPI to communicate. And a Texas Instruments MAX232N IC to translate 0-5VDC TTL to and from -12-12VDC RS-232 UART.  -->
+           On the embedded side, the solution was implemented on an Arduino Mega R3 with two key peripherals: an MCP4921 10-bit digital-to-analog converter (SPI) to drive the flow controller, and a TI MAX232N IC to translate TTL logic levels to ±12&nbsp;V RS-232 for reliable communication with the Pinnacle supply.
+        </p>
+        <p>
+          <!-- On the front-end, I created a Python GUI that reads the Pinnacle Voltage, Oxygen analog voltage, and time in seconds from the arduino and graphs it on a sliding window for real-time data. As the python program logs starts the process and processes entries, it logs data into a .csv file for preservation of data.  -->
+           On the software side, I built a custom Python GUI with Tkinter and Matplotlib to provide real-time visualization and logging. The interface plots Pinnacle voltage and oxygen flow on a sliding time window, displays key control constants, and automatically records all data to CSV for traceability and offline analysis.
+        </p>
+        <!-- Optional bullets for highlights -->
+        <ul>
+            <li>Integrated Arduino Mega R3 with MCP4921 DAC and TI MAX232N level shifter</li>
+            <li>Developed real-time PID loop with RS-232 feedback and analog output control</li>
+            <li>Created Python desktop GUI for live plotting, parameter display, and CSV logging</li>
+            <li>Improved operator efficiency — reduced daily manual monitoring by ~1 hour</li>
+          <!-- <li>Arduino Mega R3 Microcontroller, MCP4921 10-bit DAC, TI MAX232N TTL-to-RS232 </li>
+          <li>Cut physicist time by an hour a day</li>
+          <li>Python TKinter with MatPlotLib GUI terminal</li> -->
+        </ul>
+      </section>
+
+      <!-- Image grid -->
+      <section>
+        <h2>Gallery</h2>
+        <div class="media-grid">
+          
+            <figure>
+                <div class="thumb">
+                    <img src="images/IMG_1587.jpg" alt="Control cabinet interior" loading="lazy">
+                </div>
+                <figcaption>Arduino w/ Soldering board and field connections mounted in Box.</figcaption>
+            </figure>
+            <figure>
+                <div class="thumb">
+                    <img src="images/IMG_1588.jpg" alt="Control cabinet interior" loading="lazy">
+                </div>
+                <figcaption>Field Wires Connected to Box including DB9, USB-B, and BNC Ports.</figcaption>
+            </figure>
+            <figure>
+                <div class="thumb">
+                    <img src="images/pygui.png" alt="Control cabinet interior" loading="lazy">
+                </div>
+                <figcaption>Screenshot from Python GUI</figcaption>
+            </figure>
+            <figure>
+                <div class="thumb">
+                    <img src="images/chamber5VoltStepperTB_schem.png" alt="Control cabinet interior" loading="lazy">
+                </div>
+                <figcaption>Schematic using Fritzing electrical design software</figcaption>
+            </figure>
+            <!-- <figure>
+                <div class="thumb">
+                    <img src="images/IMG_1560.jpg" alt="Control cabinet interior" loading="lazy">
+                </div>
+                <figcaption>Fully Automated Vacuum Chamber.</figcaption>
+            </figure> -->
+
+          <!-- Add more figures as needed -->
+        </div>
+      </section>
+
+      <!-- Optional: Links / code / docs -->
+      <!-- <section style="margin-top: 26px;">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="https://github.com/yourrepo" target="_blank" rel="noopener">Source / repo (if public)</a></li>
+          <li><a href="resume.html">Related experience on my resume</a></li>
+          <li><a href="contact.html">Contact me for details</a></li>
+        </ul>
+      </section> -->
+    </main>
+
+    <footer>
+      <p>© 2025 Joey Isola</p>
+    </footer>
+    <script src="js/lightbox.js" defer></script>
+  </div>
+</body>
+</html>
