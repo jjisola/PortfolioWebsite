@@ -31,7 +31,7 @@
       <!-- Title & meta -->
       <section class="project-hero">
         <h1 class="project-title">Cathodic Arc PVD Coating Chamber Automation</h1>
-        <div class="project-meta">Role: Automation Engineer &nbsp;•&nbsp; Year: 2024 &nbsp;•&nbsp; Stack: Allen Bradley PLC, Ignition Edge SCADA</div>
+        <div class="project-meta">Role: Automation Engineer &nbsp;•&nbsp; Year: 2025 &nbsp;•&nbsp; Stack: Allen Bradley PLC, Ignition Edge SCADA</div>
         <!-- Optional hero image -->
         <!-- <img class="hero-image" src="images/project-hero.jpg" alt="Wide view of the project setup" loading="lazy"> -->
       </section>
@@ -41,18 +41,23 @@
         <p>
           <!-- Opening paragraph: high-level summary of what the project is, who it was for,
           and the main outcome or impact. Mention notable constraints or goals. -->
-          <!-- Fully Automated vacuum chamber inteded for coating stainless steel with Diamond-Like-Carbon material; mainly used in production of Aerospace components. The main goal of this automation project was to produce a system where a "recipe" process is loaded from an excel spreadsheet and executed while monitoring for data logging, displaying real time status of all peripheral devices and handling alarms. This system was finished in December of 2024 and is used near daily, running recipe processes up to 8 about hours long. The implementation of this automated system has saved an average of 5-6 hours of operator overhead for Acree Technologies. -->
-          Fully Automated Vacuum chamber specialized for Cathodic Arc Deposition of Nickel-Alloy Corrosion Resistant coating made specifically for Chromalloy. The goal of this project was to construct a Turnkey automation system where a recipe process is loaded from an excel spreadsheet and set all devices to their specified set-points while monitoring real time data, logging all historical data, and handling alarms based on preconfigured conditions. The implementation of this automated system has saved 10 hours of operator overhead every other day for Acree Technologies.
+          
+          <!-- Fully Automated Vacuum chamber specialized for Cathodic Arc Deposition of Nickel-Alloy Corrosion Resistant coating made specifically for Chromalloy. The goal of this project was to construct a Turnkey automation system where a recipe process is loaded from an excel spreadsheet and set all devices to their specified set-points while monitoring real time data, logging all historical data, and handling alarms based on preconfigured conditions. The implementation of this automated system has saved 10 hours of operator overhead every other day for Acree Technologies. -->
+           I designed and implemented a fully automated vacuum chamber specialized for Cathodic Arc Deposition of Nickel-Alloy corrosion-resistant coatings, developed for Chromalloy's aerospace applications. The system executes complex “recipe-based” coating processes—loaded directly from Excel spreadsheets—while automatically setting device setpoints, logging real-time and historical data, and managing alarms. By eliminating manual oversight, the chamber saves ~10 hours of operator labor every other day, greatly improving efficiency and consistency for Acree Technologies.
         </p>
         <p>
           <!-- Second paragraph: your responsibilities and the interesting technical bits—architecture, tools, tradeoffs, performance metrics, testing strategy,etc. -->
           <!-- The most challenging part in building this chamber was regulating the asynchronous behavior of seven concurrent RS-232 ports. Each RS-232 port was responisble for initializing its assigned device, setting values for both recipe delta-time values or operator manual control, and reading actual values every 0.5 seconds. Each power supply or peripheral device communicated using different parameters; some used ASCII protocol, others used raw bytes in a complicated handshake protocol, etc...  -->
-          This chamber refactored Allen Bradley MicroLogix 1400 PLC's from an obsolete system and incorporated Ignition Edge Control as SCADA, using a Dell Desktop computer running Windows 11 and a touch screen monitor. This system uses 6 RS-232 connections, 15 Analog Input channels, 7 Analog Output channels, and a multitude of digital IO for control of peripheral devices. The PLC's digital output feeds relays and contactors to supply 3-phase power to various power supplies, 2 heaters, a motor, seven pneumatic controlled devices and two pumps. 
+          <!-- This chamber refactored Allen Bradley MicroLogix 1400 PLC's from an obsolete system and incorporated Ignition Edge Control as SCADA, using a Dell Desktop computer running Windows 11 and a touch screen monitor. This system uses 6 RS-232 connections, 15 Analog Input channels, 7 Analog Output channels, and a multitude of digital IO for control of peripheral devices. The PLC's digital output feeds relays and contactors to supply 3-phase power to various power supplies, 2 heaters, a motor, seven pneumatic controlled devices and two pumps.  -->
+           The system leveraged refactored Allen-Bradley MicroLogix 1400 PLCs integrated with Ignition Edge Control SCADA running on a Windows 11 industrial PC with touchscreen interface. It coordinated a network of 6 RS-232 connections, 15 analog inputs, 7 analog outputs, and extensive digital I/O for precise control of 8 power supplies, a mass flow controller, 2 Heaters, a Motorized Gate Valve, several pneumatic based actuators, a Cryogenic pump, 3 pressure sensors, and a thermocouple.
         </p>
         
         <p>
           <!-- One of the most notable tradeoffs we made in the creation of this automated system was using C-More SCADA with the Automation Direct EA9 touch panel instead of a computer with either WonderWare or Ignition. The incorporation of the EA9 touch panel with C-More made it less convenient for the operators to retrieve data; however, isolating the automation system entirely from the desktop computer for programming made the chamber safer and more deterministic for the Diamond-Like-Carbon coating process. The down-side of this method is that it is time consuming to retrieve data stored on the PLC's and injecting new recipes into the code associated with the touch panel.  -->
-          One of the most significant responsibilities of this automated system is to retrigger the cathodic arc process when an "Arc-Out" event occurs mid process. To start a cathodic arc process, a 
+          A major technical challenge was regulating asynchronous communication across multiple RS-232 devices, each with unique protocols (ASCII vs. raw-byte handshake). I developed a robust scheduling and retry logic to maintain deterministic behavior and ensure uninterrupted process stability.
+        </p>
+        <p>
+          One critical feature of this system is the automatic retriggering of the cathodic arc process after an “arc-out” event. When an arc-out is detected (indicated by the process current dropping near zero), the system actuates a rotary actuator coupled to a stainless-steel rod, momentarily grounding the target. This action reliably re-ignites the cathodic arc, allowing the recipe to continue without operator intervention and minimizing process disruptions.
         </p>
         <!-- Optional bullets for highlights -->
         <ul>
@@ -67,36 +72,37 @@
         <h2>Gallery</h2>
         <div class="media-grid">
           
-            <!-- <figure>
+            
+            <figure>
                 <div class="thumb">
-                    <img src="images/IMG_1556.jpg" alt="Control cabinet interior" loading="lazy">
+                    <img src="images/IMG_1614.jpg" alt="Control cabinet interior" loading="lazy">
                 </div>
-                <figcaption>PLC Control cabinet layout.</figcaption>
+                <figcaption>PLC Cabinet #1: Contains Allen Bradley PLC Array, field wires, and Arduino.</figcaption>
             </figure>
             <figure>
                 <div class="thumb">
-                    <img src="images/IMG_1555.jpg" alt="Control cabinet interior" loading="lazy">
+                    <img src="images/IMG_1615.jpg" alt="Control cabinet interior" loading="lazy">
                 </div>
-                <figcaption>Automation Direct SCADA with live run status.</figcaption>
+                <figcaption>PLC Cabinet #2: Contains High Voltage Breakers, Contactors, and Relays.</figcaption>
             </figure>
             <figure>
                 <div class="thumb">
-                    <img src="images/IMG_1559.jpg" alt="Control cabinet interior" loading="lazy">
+                    <img src="images/sqre2.png" alt="Control cabinet interior" loading="lazy">
                 </div>
-                <figcaption>Full PLC Cabinet, Power Supply Cabinet, and Vacuum Chamber (Left to Right).</figcaption>
+                <figcaption>Screenshot of SCADA system using Ignition Edge. </figcaption>
             </figure>
             <figure>
                 <div class="thumb">
-                    <img src="images/sqre.png" alt="Control cabinet interior" loading="lazy">
+                    <img src="images/IMG_1616.jpg" alt="Control cabinet interior" loading="lazy">
                 </div>
-                <figcaption>Control Logic for Setpoints. Automation Direct Productivity Suite.</figcaption>
+                <figcaption>Rotary Actuator Coupled onto Stainless Steel Rod for Igniting Cathodic Arc. </figcaption>
             </figure>
             <figure>
                 <div class="thumb">
-                    <img src="images/electricalDesign.png" alt="Control cabinet interior" loading="lazy">
+                    <img src="images/IMG_1620.jpg" alt="Control cabinet interior" loading="lazy">
                 </div>
-                <figcaption>Analog Voltage input PLC Snip-it from PLC Wiring Schematic.</figcaption>
-            </figure> -->
+                <figcaption>Full front view of control cabinet with touch screen.</figcaption>
+            </figure>
             <!-- <figure>
                 <div class="thumb">
                     <img src="images/IMG_1560.jpg" alt="Control cabinet interior" loading="lazy">
