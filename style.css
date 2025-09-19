@@ -80,6 +80,18 @@ main { flex: 1; text-align: left; }
 
 footer { margin-top: 24px; color: #666; }
 
+/* About Page*/
+.about{
+  display: grid;
+  gap: 18px;
+  margin: 18px 0 28px;
+}
+
+.about p{
+  line-height: 1.65;
+  margin: 0;
+}
+
 /* Optional: project cards, etc. */
 section { margin: 30px 0; }
 
