@@ -171,6 +171,11 @@ body{
     /* width: var(--right-width); */
     /* height: 10in; */
 }
+.website-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
 
 .mail-icon{
     width: 20px;
